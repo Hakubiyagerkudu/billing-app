@@ -112,7 +112,7 @@ class _HomeLineChartState extends State<HomeLineChart> {
               alignment: Alignment.center,
               children: [
                 LineChart(
-                  swapAnimationDuration: Duration.zero,
+                  duration: Duration.zero,
                   LineChartData(
                     minX: 0,
                     maxX: 11,
@@ -166,8 +166,8 @@ class _HomeLineChartState extends State<HomeLineChart> {
                     borderData: FlBorderData(show: false),
                     lineTouchData: LineTouchData(
                       touchTooltipData: LineTouchTooltipData(
-                        tooltipBgColor: Colors.white,
-                        tooltipRoundedRadius: 12,
+                        getTooltipColor: (touchedSpot) => Colors.white,
+                        tooltipBorderRadius: BorderRadius.circular(12),
                         fitInsideHorizontally: true,
                         fitInsideVertically: true,
                         getTooltipItems: (touchedSpots) {

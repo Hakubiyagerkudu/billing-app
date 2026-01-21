@@ -3,7 +3,6 @@ import 'package:kontor/routes/app_routes.dart';
 import 'package:kontor/services/invoice_service.dart';
 import 'package:kontor/utils/color_data.dart';
 import 'package:kontor/utils/constant.dart';
-import 'package:kontor/utils/widget_utils.dart';
 import 'package:kontor/widgets/custom_checkbox.dart';
 import 'package:kontor/widgets/custom_dialog.dart';
 import 'package:kontor/widgets/custom_text.dart';
@@ -225,7 +224,8 @@ class _InvoiceScreenState extends State<InvoiceScreen>
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24),
                       ),
-                      icon: const Icon(Icons.payments_outlined),
+                      icon: const Icon(Icons.payments_outlined,
+                          color: Colors.white),
                       // icon: getAssetImage('valid.png',
                       //     width: 27, height: 27, color: Colors.white),
                       label: CustomText(
@@ -276,9 +276,11 @@ class _InvoiceScreenState extends State<InvoiceScreen>
                 TabBar(
                   controller: _tabController,
                   labelColor: primaryColor,
+                  dividerColor: Colors.transparent,
                   unselectedLabelColor: Colors.grey,
+                  indicatorPadding: EdgeInsets.zero,
                   indicatorColor: primaryColor,
-                  tabs: [Tab(text: "Төлсөн "), Tab(text: "Төлөөгүй")],
+                  tabs: const [Tab(text: "Төлсөн "), Tab(text: "Төлөөгүй")],
                 ),
               ),
             ),
